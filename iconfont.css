@@ -1,0 +1,21 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1536732961102'); /* IE9*/
+  src: url('iconfont.eot?t=1536732961102#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAASIAAsAAAAABtAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8vUjmY21hcAAAAYAAAABWAAABhmZY0VtnbHlmAAAB2AAAALYAAAC4fB7792hlYWQAAAKQAAAAMQAAADYUSuRAaGhlYQAAAsQAAAAgAAAAJAmNBTxobXR4AAAC5AAAAAwAAAAMDbr//2xvY2EAAALwAAAACAAAAAgAJABcbWF4cAAAAvgAAAAfAAAAIAEOACpuYW1lAAADGAAAAUUAAAJtPlT+fXBvc3QAAARgAAAAJQAAADct6D7UeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bkmcw4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDg8c3+WwNzwv4EhhrmRoQEozAiSAwAZ2w0eeJztkMERgCAMBPcAeTgW4sM+bMGXQ/W0gUnQLryZzSUX+ARYgGwcRgHdCNdlqSLPrJGXeFPNRepnb2PA5ybZrpon/6fKry3q/k7JrzWJvk3QAzImD+IAAHicFYy/DsFQGEe/X0ubhuTeRu8VCW3SRClbK2oyewHxbzXardi8g1FULZ7EG8lXNZ6cnEMgKq/1t3kgl6geDhBNpknbwTTRng3LaHUVp2qcKdzMvs5G6lt4R4WPnsWK92b/r74vRSjL8lQzzDP1iKp8EoW2gyi0vGpmeTrJHOg0mSMaGAsUIhhKXvFOxr7AndfCHwkUeEolO02rgQseMg4Eb5CLIJa85e2fkfNSuD2/+QOsEShwAAB4nGNgZGBgAOLuG16n4/ltvjJwszCAwPV9FxRh9P///xtY1zM3ArkcDEwgUQB4Yg30AAAAeJxjYGRgYG7438AQw7rr/////1jXMwBFUAAzAL/vB9IEAAAABboAAAQA//8AAAAAACQAXHicY2BkYGBgZpBjANEMDExAzAWEDAz/wXwGAAugATkAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicY2BigAAuBuyAmZGJkZmRhYE1JTE9vxRIJmckMjAAACQqBCcAAAA=') format('woff'),
+  url('iconfont.ttf?t=1536732961102') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1536732961102#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dagou:before { content: "\e660"; }
+
+.icon-dacha:before { content: "\e647"; }
+

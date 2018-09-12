@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./iconfont.css">
+</head>
+
+<body>
+    <div id="app">
+        <input class="input1" v-model='message' type="text" placeholder="what do you want to do?" autofocus='autofocus'
+            v-on:keyup.enter='add'>
+        <div class="eleList">
+            <ul>
+
+                <li v-for="(value,index) in addArr">
+               
+                    <label for="circle" v-bind:for=index :name="index" @click="()=>onClick(index)">
+
+                        <i class="iconfont icon-dagou" v-bind:class="value.status ? 'show' : 'hidden'"></i>
+
+                    </label>
+
+                    <!-- <label for="circle" v-bind:for=index v-else>
+                        <i class="iconfont icon-dagou" v-bind:class="{hidden:ishidden}"></i>
+                    </label> -->
+                    <input type="checkbox" v-model="checked" id="circle" v-bind:id=index value="circle" class="circle" :checked="value.status" />
+                    <div class="text"> {{value.text}} </div>
+                    <!-- <input type="text" class="input2" /> -->
+                </li>
+            </ul>
+        </div>
+        <div class="foot">
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                message: '',
+                addArr: [{}],
+                ishidden: true,
+                isshow: true,
+                checked: ''
+            },
+            computed:{
+                isChecked:function(){
+                    return;
+                }
+            },
+            methods: {
+                add:function(){
+                    this.addArr.push({
+                        id:this.addArr.length,
+                        text:this.message,
+                        status:false
+                    })
+                    this.message=''
+                },
+                onClick:function(id){
+                    // let k = e.target.name;
+                    let key = this.addArr.findIndex(item=>item.id===id)
+                    this.addArr[key].status=!this.addArr[key].status
+                    console.log(key)
+                    
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
