@@ -8,6 +8,7 @@
     <title>表单</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" type="text/css" href="./iconfont.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
@@ -18,58 +19,101 @@
             <ul>
 
                 <li v-for="(value,index) in addArr">
-               
+
                     <label for="circle" v-bind:for=index :name="index" @click="()=>onClick(index)">
 
                         <i class="iconfont icon-dagou" v-bind:class="value.status ? 'show' : 'hidden'"></i>
+
 
                     </label>
 
                     <!-- <label for="circle" v-bind:for=index v-else>
                         <i class="iconfont icon-dagou" v-bind:class="{hidden:ishidden}"></i>
                     </label> -->
-                    <input type="checkbox" v-model="checked" id="circle" v-bind:id=index value="circle" class="circle" :checked="value.status" />
-                    <div class="text"> {{value.text}} </div>
-                    <!-- <input type="text" class="input2" /> -->
+                    <input type="checkbox" v-model="checked" id="circle" v-bind:id=index value="circle" class="circle"
+                        :checked="value.status" />
+                    <div class="text">{{value.text}}</div>
+                     <input type="text" class="input2" :value="value.text" @click="readonly=false"/>
+                   <i class="iconfont icon-dacha" style="position: absolute;
+                   right: 0;font-size: 12px;" @click="show=true">
+                </i>
+                   
                 </li>
             </ul>
+        </div>
+        <div v-show='show' class="tanbord">
+                <!-- <div class="tanbord"> -->
+            <p>选项未完成是否删除</p>
+            <div class="btn-group">
+                    <input class="sure" type="button" value="确定" @click="op(2)" >
+                    <input class="cancel" type="button" value="取消" @click="op(1)">
+            </div>
+            
         </div>
         <div class="foot">
 
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <script>
         var vue = new Vue({
             el: '#app',
             data: {
                 message: '',
-                addArr: [{}],
+                addArr: [],
                 ishidden: true,
                 isshow: true,
-                checked: ''
+                checked: '',
+                show:false,
+                onOk:false,
+                onCancel:false,
+                readonly:true
             },
-            computed:{
-                isChecked:function(){
+            // beforeCreate: function () {
+            //     // `this` 指向 vm 实例
+            //     console.log('a is: ' + this.addArr)
+            // },
+            // created: function () {
+            //     // `this` 指向 vm 实例
+            //     console.log('a is: ' + this.addArr)
+            // },
+            // watch:{
+            //     addArr:function(n,o){
+            //         console.info(n)
+            //     }
+            // },
+            computed: {
+                isChecked: function () {
                     return;
                 }
             },
             methods: {
-                add:function(){
+                add: function () {
                     this.addArr.push({
-                        id:this.addArr.length,
-                        text:this.message,
-                        status:false
+                        id: this.addArr.length,
+                        text: this.message,
+                        status: false
                     })
-                    this.message=''
+                    this.message = ''
                 },
-                onClick:function(id){
+                onClick: function (id) {
                     // let k = e.target.name;
-                    let key = this.addArr.findIndex(item=>item.id===id)
-                    this.addArr[key].status=!this.addArr[key].status
-                    console.log(key)
-                    
-                }
+                    let key = this.addArr.findIndex(item => item.id === id)
+                    this.addArr[key].status = !this.addArr[key].status
+                  
+
+                },
+                op(type){
+                    this.show=false
+                    if(type=='1'){
+                        if(this.onCancel) this.onCancel()
+                    }else{
+                        if(this.onOk) this.onOk()
+                        let index=this.addArr.findIndex(item=>item.id)
+                        this.addArr.splice(index,1)
+                    }
+                },
+
             }
 
         })
